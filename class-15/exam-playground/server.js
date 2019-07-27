@@ -1,6 +1,6 @@
 'use strict'
 
-// Application Dependencies
+//Application Dependencies
 const express = require('express');
 const pg = require('pg');
 
@@ -33,5 +33,10 @@ app.listen(PORT, () => console.log('Listening on port:', PORT));
 // API Routes
 app.get('/fun', (request, response) => {
     // test out your routes, perhaps ejs views or database stuff
-    response.render('fun');
+    var object = {"books": [
+        {"id": 1, "title": "Alice in Wonderland", "author": "Lewis Carroll"},
+        {"id": 2, "title": "Hitchhiker's Guide to the Galaxy", "author": "Douglas Adams"},
+        {"id":3, "title": "Mort", "author": "Terry Pratchett"}
+    ]};
+    response.render('../views/fun.ejs',{books:object.books});
 });

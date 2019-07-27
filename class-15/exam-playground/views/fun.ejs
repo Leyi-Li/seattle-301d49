@@ -1,1 +1,6 @@
 <!-- test out your ejs stuff -->
+<% books.forEach(book=>{ %>
+    <p> <%= book.id %> </p>
+    <p> <%= book.title %> </p>
+    <p> <%= book.author %> </p>
+<% }) %>
